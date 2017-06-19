@@ -1,0 +1,29 @@
+/*Fonts*/
+@import url('https://fonts.googleapis.com/css?family=Space+Mono:400,700');
+
+/*Reset*/
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Space Mono', monospace;
+    color: white;
+}
+
+section {
+    width: 100%;
+    height: 100vh;
+}
+
+/*section welcome*/
+#welcome {
+    background: rgb(21, 18, 74);
+}
+
+/*section gallery*/
+#gallery {
+    background-image: url("../img/background.png");
+}
