@@ -21,6 +21,15 @@ section {
 /*section welcome*/
 #welcome {
     background: rgb(21, 18, 74);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+#welcome__logo {
+    height: 100px;
+    width: 100px;
 }
 
 /*section gallery*/

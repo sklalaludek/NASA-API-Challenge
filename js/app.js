@@ -1,8 +1,10 @@
 $(function() {
-    var key = 'X0F091rbxFo3yIow6XjUAGwwZG7MZop99Ov1wDhi';
+    // var key = 'X0F091rbxFo3yIow6XjUAGwwZG7MZop99Ov1wDhi';
     // var nasaUrl = 'https://api.nasa.gov/EPIC/api/natural?api_key=X0F091rbxFo3yIow6XjUAGwwZG7MZop99Ov1wDhi ',
     var nasaUrl = 'https://api.nasa.gov/planetary/apod?api_key=X0F091rbxFo3yIow6XjUAGwwZG7MZop99Ov1wDhi ',
-          marsUrl = 'https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?sol=1000&api_key=X0F091rbxFo3yIow6XjUAGwwZG7MZop99Ov1wDhi';
+          marsUrl = 'https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?sol=1000&api_key=X0F091rbxFo3yIow6XjUAGwwZG7MZop99Ov1wDhi',
+          welcome = document.getElementById('welcome'),
+          logo = document.getElementById('welcome__logo');
 
     function getPic(){
         $.ajax({
@@ -30,5 +32,4 @@ $(function() {
 
     getPic();
     getMarsPic();
-
 });
