@@ -30,6 +30,11 @@ $(function() {
         })
     }
 
+    function intro(){
+        $('.animation-fly-in').removeClass('hidden');
+    }
+
+    $(window).on('load', intro());
     getPic();
     getMarsPic();
 });

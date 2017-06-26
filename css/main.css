@@ -36,8 +36,8 @@ section {
 }
 
 #welcome__logo {
-    height: 100px;
-    width: 100px;
+    /*height: 100px;
+    width: 100px;*/
 }
 
 /*text*/
@@ -63,6 +63,12 @@ section {
 .animation-fly-in.hidden li {
     opacity: 0;
 }
+
+.animation-fly-in.hidden li:nth-child(2n+1) {transform: translateX(-200px) translateY(-200px);}
+.animation-fly-in.hidden li:nth-child(3) {transform: translateX(20px) translateY(100px);}
+.animation-fly-in.hidden li:nth-child(7) {transform: translateX(-30px) translateY(-100px);}
+.animation-fly-in.hidden li:nth-child(4n+2) {transform: translateX(10px) translateY(-150px);}
+.animation-fly-in.hidden li:nth-child(18) {transform: translateX(-30px) translateY(200px);}
 
 /*section gallery*/
 #gallery {
