@@ -92,3 +92,8 @@ section {
   height: 100%;
   padding: 0 5px;
 }
+
+.gallery__item {
+    min-height: 50em;
+    border: 2em solid white;
+}
