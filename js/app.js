@@ -6,6 +6,10 @@ $(function() {
           welcome = document.getElementById('welcome'),
           logo = document.getElementById('welcome__logo');
 
+    function getRandomInt(min, max) {
+          return Math.floor(Math.random() * (max - min + 1)) + min;
+    }
+
     function getPic(){
         $.ajax({
             url: nasaUrl,
@@ -36,5 +40,5 @@ $(function() {
 
     $(window).on('load', intro());
     getPic();
-    getMarsPic();
+    // getMarsPic();
 });
