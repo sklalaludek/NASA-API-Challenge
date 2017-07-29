@@ -36,11 +36,6 @@ section {
     flex-direction: column;
 }
 
-#welcome__logo {
-    /*height: 100px;
-    width: 100px;*/
-}
-
 /*text*/
 .animation-fly-in {
     list-style: none;
@@ -76,9 +71,9 @@ section {
 .animation-fly-in.hidden li:nth-child(16) {transform: translateX(50px) translateY(250px);}
 .animation-fly-in.hidden li:nth-child(18) {transform: translateX(-30px) translateY(200px);}
 
-/*section gallery*/
-#gallery {
-    background-image: url("../img/background.png");
+/*sections gallery & mars gallery*/
+#gallery,
+#gallery_mars {
     display: flex;
     flex-direction: column;
 }
@@ -95,24 +90,49 @@ section {
     flex: 1;
 }
 
-.gallery__items {
+.gallery__items,
+.gallery_mars__items {
     display: flex;
     min-height: 100vh;
     overflow: hidden;
 }
 
-
-.gallery__item {
-    border: 2em solid white;
-    justify-content: center;
-    align-items: center;
-    flex: 1;
+.gallery__item,
+.gallery_mars__item {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
 }
 
-.gallery__item>* {
+/*section gallery*/
+#gallery {
+    background-color: black;
+}
+
+.gallery__items .row {
+    align-items: center;
+}
+
+.gallery__item {
+    border: 5px solid white;
+    height: 50vh;
+    width: 100%;
+}
+
+/*section gallery mars*/
+
+#gallery_mars {
+    background-image: url("../img/background.png");
+}
+
+.gallery_mars__item {
+    border: 2em solid white;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+}
+
+.gallery_mars__item>* {
     margin: 0;
     width: 100%;
     flex: 1 0 auto;
