@@ -1,6 +1,4 @@
 $(function() {
-    // var key = 'X0F091rbxFo3yIow6XjUAGwwZG7MZop99Ov1wDhi';
-    // var nasaUrl = 'https://api.nasa.gov/EPIC/api/natural?api_key=X0F091rbxFo3yIow6XjUAGwwZG7MZop99Ov1wDhi ',
     var nasaUrl = 'https://api.nasa.gov/planetary/apod',
           marsUrl = 'https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?sol=1000',
           key = '&api_key=X0F091rbxFo3yIow6XjUAGwwZG7MZop99Ov1wDhi',
@@ -25,15 +23,15 @@ $(function() {
         }).done(function(r){
             showPic(r);
         }).fail(function(error){
-            console.log(error);
+            console.error(error);
         })
     }
 
     function showPic(data) {
-        var galleryItems = $('.gallery__item');
+        var galleryItem = $('.gallery__item');
 
         console.log('showPic', data);
-        galleryItems.css("background-image", 'url("' + data.url + '")');
+        galleryItem.css("background-image", 'url("' + data.url + '")');
     }
 
     function getMarsPic(){
