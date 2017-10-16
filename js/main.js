@@ -5,7 +5,8 @@ $(function() {
         logo = $('#welcome__logo'),
         galleryItem = $('.gallery__item'),
         title = $('.title'),
-        date = $('.date');
+        date = $('.date'),
+        galleryMarsItem = $('.gallery_mars__item');
 
     /*random integer*/
     function getRandomInt(min, max) {
@@ -13,7 +14,7 @@ $(function() {
     }
 
     /*random date*/
-    var year = getRandomInt(2013, 2016),
+    var year = getRandomInt(2011, 2016),
         month = getRandomInt(1, 12),
         day = getRandomInt(1, 28),
         randomDate = year + '-' + month + '-' + day;
@@ -34,11 +35,12 @@ $(function() {
     /*creating Ajax requests for Mars pictures*/
     function getMarsPic() {
         $.ajax({
-            url: marsUrl,
+            url: marsUrl + 'page=2' + key,
             type: 'GET',
             dataType: 'json'
         }).done(function(r) {
-            console.log(r);
+            // console.log(r.photos);
+            showMarsGallery(r);
         }).fail(function(error) {
             console.log(error);
         });
@@ -49,6 +51,14 @@ $(function() {
         galleryItem.css("background-image", 'url("' + data.url + '")');
         title.text(data.title).hide();
         date.text(data.date).hide();
+    }
+
+    /*display elements in the Mars gallery section*/
+    function showMarsGallery(data) {
+        var marsPhotos = data.photos;
+        galleryMarsItem.each(function(){
+            $(this).css("background-image", 'url("' + marsPhotos[Math.floor(Math.random() * (850 - 0 + 1)) + 0].img_src + '")');
+        });
     }
 
     function debounce(func, wait) {
@@ -97,5 +107,5 @@ $(function() {
     $(window).on('scroll', debounce(checkContent, 10));
     logo.on('click', scrollUp);
     getRandomPic();
-    // getMarsPic();
+    getMarsPic();
 });
