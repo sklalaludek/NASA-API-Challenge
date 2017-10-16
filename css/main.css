@@ -27,6 +27,7 @@ h2 {
 a {
     cursor: pointer;
     color: white;
+    outline: none;
 }
 
 #main {
@@ -264,9 +265,4 @@ button {
     display: flex;
     justify-content: center;
     align-items: center;
-}
-
-footer {
-    display: flex;
-    flex-direction: column;
 }
