@@ -86,8 +86,16 @@ $(function() {
         }
     }
 
+    /*back to the top*/
+    function scrollUp(e) {
+        $('html,body').animate({
+            scrollTop: $('#main').offset().top + 'px'
+        }, 1000);
+    }
+
     $(window).on('load', intro());
     $(window).on('scroll', debounce(checkContent, 10));
+    logo.on('click', scrollUp);
     getRandomPic();
     // getMarsPic();
 });
