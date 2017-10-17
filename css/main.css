@@ -254,15 +254,24 @@ a {
 /*button*/
 
 button {
+    font-family: 'Space Mono', monospace;
+    color: white;
     width: 10em;
     height: 10em;
     border-radius: 50%;
     border: none;
     background-color: #e9001e;
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+button:hover {
+    background-color: #b80b21;
 }
 
 .gallery__loader {
-    display: flex;
+    display: grid;
     justify-content: center;
     align-items: center;
+    padding-bottom: 50px;
 }
