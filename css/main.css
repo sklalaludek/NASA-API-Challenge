@@ -1,6 +1,7 @@
 /*Fonts*/
 
 @import url('https://fonts.googleapis.com/css?family=Space+Mono:400,700');
+
 /*Reset*/
 
 * {
@@ -42,22 +43,6 @@ a {
 }
 
 /*section welcome*/
-
-/*#welcome {
-    background: rgb(21, 18, 74);
-    background: rgba(16,79,137,1);
-    background: -moz-linear-gradient(top, rgba(16,79,137,1) 0%, rgba(10,9,37,1) 100%);
-    background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(16,79,137,1)), color-stop(100%, rgba(10,9,37,1)));
-    background: -webkit-linear-gradient(top, rgba(16,79,137,1) 0%, rgba(10,9,37,1) 100%);
-    background: -o-linear-gradient(top, rgba(16,79,137,1) 0%, rgba(10,9,37,1) 100%);
-    background: -ms-linear-gradient(top, rgba(16,79,137,1) 0%, rgba(10,9,37,1) 100%);
-    background: linear-gradient(to bottom, rgba(16,79,137,1) 0%, rgba(10,9,37,1) 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#104f89', endColorstr='#0a0925', GradientType=0 );
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-}*/
 
 #particles-js {
     width: 100%;
