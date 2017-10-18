@@ -41,21 +41,7 @@ $(function() {
                 type: 'GET',
                 dataType: 'json'
             }).done(function(r) {
-                var photos = r.photos;
                     showMarsGallery(r);
-            }).fail(function(error) {
-                console.log(error);
-            });
-    }
-
-    function getMoreMarsPic() {
-            $.ajax({
-                url: marsUrl + 'page=2' + key,
-                type: 'GET',
-                dataType: 'json'
-            }).done(function(r) {
-                    console.log('moreMars', r);
-                    loadData(r);
             }).fail(function(error) {
                 console.log(error);
             });
@@ -76,28 +62,7 @@ $(function() {
                 $(this).css("background-image", 'url("' + marsPhotos[Math.floor(Math.random() * (850 - 0 + 1)) + 0].img_src + '")');
             });
         }
-
     }
-
-    function loadData (data) {
-        console.log('loadData', data);
-        var newGalleryMarsItem = $('.gallery_mars__item.loaded');
-        var myInterval = setInterval(function() {
-            console.log(newGalleryMarsItem);
-            if (newGalleryMarsItem.length) {
-                newGalleryMarsItem.each(function(){
-                    $(this).css("background-image", 'url("' + data.photos[Math.floor(Math.random() * (850 - 0 + 1)) + 0].img_src + '")');
-                });
-            }
-        }, 3000);
-        clearInterval(myInterval);
-    }
-
-    /*function showMoreMarsGallery(data) {
-        newGalleryMarsItem.each(function() {
-            $(this).css("background-image", 'url("' + data.photos[Math.floor(Math.random() * (850 - 0 + 1)) + 0].img_src + '")');
-        });
-    }*/
 
     function debounce(func, wait) {
         var timeout,
@@ -141,12 +106,6 @@ $(function() {
         }
     }
 
-    /*load more*/
-    function loadMore() {
-        console.log('loadMore');
-        getMoreMarsPic();
-    }
-
     /*back to the top*/
     function scrollUp(e) {
         $('html,body').animate({
@@ -158,7 +117,5 @@ $(function() {
     $(window).on('scroll', debounce(checkContent, 10));
     logo.on('click', scrollUp);
     btn.on('click', createItems);
-    btn.on('click', loadMore);
     getRandomPic();
-    getMarsPic();
 });
