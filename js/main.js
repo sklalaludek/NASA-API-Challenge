@@ -100,11 +100,11 @@ $(function() {
     }
 
     /*create items in Mars gallery section*/
-    function createItems(e) {
+    /*function createItems(e) {
         for (var i = 1; i <= 6; i++) {
             gridWrapper.append("<div "+i+" class='gallery_mars__item loaded'></div>");
         }
-    }
+    }*/
 
     /*back to the top*/
     function scrollUp(e) {
@@ -116,6 +116,6 @@ $(function() {
     $(window).on('load', intro());
     $(window).on('scroll', debounce(checkContent, 10));
     logo.on('click', scrollUp);
-    btn.on('click', createItems);
+    /*btn.on('click', createItems);*/
     getRandomPic();
 });
