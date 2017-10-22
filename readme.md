@@ -4,3 +4,6 @@
 
 ## Web development tools:
 * AJAX
+
+### todo
+* Load more images on click
