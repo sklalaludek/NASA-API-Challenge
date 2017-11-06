@@ -37,7 +37,7 @@ $(function() {
     /*creating Ajax requests for Mars pictures*/
     function getMarsPic() {
             $.ajax({
-                url: marsUrl + 'page=2' + key,
+                url: marsUrl + key,
                 type: 'GET',
                 dataType: 'json'
             }).done(function(r) {
@@ -58,6 +58,7 @@ $(function() {
     function showMarsGallery(data) {
         if (data) {
             var marsPhotos = data.photos;
+            console.log('showMarsGallery', data.photos);
             galleryMarsItem.each(function(){
                 $(this).css("background-image", 'url("' + marsPhotos[Math.floor(Math.random() * (850 - 0 + 1)) + 0].img_src + '")');
             });
@@ -118,4 +119,5 @@ $(function() {
     logo.on('click', scrollUp);
     /*btn.on('click', createItems);*/
     getRandomPic();
+    getMarsPic();
 });
