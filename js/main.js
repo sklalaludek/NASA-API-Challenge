@@ -120,7 +120,7 @@ $(function() {
     }
 
     /*back to the top*/
-    function scrollUp(e) {
+    function scrollUp() {
         $('html,body').animate({
             scrollTop: $('#main').offset().top + 'px'
         }, 1000);

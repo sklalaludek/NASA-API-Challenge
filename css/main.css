@@ -216,7 +216,7 @@ a {
   border: 2em solid white;
 }
 
-.gallery_mars__item,
+.gallery_mars__item > *,
 .gallery_mars__item___hide > * {
   margin: 0;
   width: 100%;
