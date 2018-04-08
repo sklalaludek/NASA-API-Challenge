@@ -7,7 +7,7 @@ $(function() {
         title = $('.title'),
         date = $('.date'),
         gridWrapper = $('.grid'),
-        galleryMarsItem = $('.gallery_mars__item'),
+        galleryMarsItems = $('.gallery_mars__item'),
         btn = $('button');
 
     /*random integer*/
@@ -41,9 +41,9 @@ $(function() {
                 type: 'GET',
                 dataType: 'json'
             }).done(function(r) {
-                    showMarsGallery(r);
+                showMarsGallery(r);
             }).fail(function(error) {
-                console.log(error);
+                console.error(error);
             });
     }
 
@@ -56,10 +56,14 @@ $(function() {
 
     /*display elements in the Mars gallery section*/
     function showMarsGallery(data) {
-        if (data) {
+        if (data && document.readyState === "complete") {
             var marsPhotos = data.photos;
-            console.log('showMarsGallery', data.photos);
-            galleryMarsItem.each(function(){
+            var galleryMarsItemsHidden = $('.gallery_mars__item___hide');
+
+            galleryMarsItems.each(function(){
+                $(this).css("background-image", 'url("' + marsPhotos[Math.floor(Math.random() * (850 - 0 + 1)) + 0].img_src + '")');
+            });
+            galleryMarsItemsHidden.each(function(){
                 $(this).css("background-image", 'url("' + marsPhotos[Math.floor(Math.random() * (850 - 0 + 1)) + 0].img_src + '")');
             });
         }
@@ -101,11 +105,19 @@ $(function() {
     }
 
     /*create items in Mars gallery section*/
-    /*function createItems(e) {
-        for (var i = 1; i <= 6; i++) {
-            gridWrapper.append("<div "+i+" class='gallery_mars__item loaded'></div>");
+    function createItems() {
+        for (var i = 0; i <= 5; i++) {
+            gridWrapper.append('<div class="gallery_mars__item___hide"></div>');
         }
-    }*/
+    }
+
+    function showMorePics(e) {
+        e.stopPropagation();
+        $('.gallery_mars__item___hide').each(function(){
+            $(this).css("display", "block");
+        });
+        $(this).hide();
+    }
 
     /*back to the top*/
     function scrollUp(e) {
@@ -115,9 +127,10 @@ $(function() {
     }
 
     $(window).on('load', intro());
+    $(window).on('load', createItems());
     $(window).on('scroll', debounce(checkContent, 10));
     logo.on('click', scrollUp);
-    /*btn.on('click', createItems);*/
+    btn.on('click', showMorePics);
     getRandomPic();
     getMarsPic();
 });
